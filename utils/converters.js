@@ -1,7 +1,7 @@
 
 module.exports =  function sunoToObject(array){
-    array.forEach()
-    const array = string.split(' ')
+
+     array = string.split(' ')
     let objeto = new Object()
     objeto.rankingsuno = parseInt(array[0])
     objeto.ticker = array[1]

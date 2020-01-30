@@ -1,7 +1,7 @@
 const GoogleSpreadsheet = require('google-spreadsheet')
 const { promisify } = require('util')
 
-const creds = require('../google_client.json')
+const creds = require('../credentials/google_api.json')
 const  sunoToObject  = require('../utils/converters')
 
 const linha = '1 JSLG3 14/5/2019 5,0% 35,00 20,00 11,45 Aguardar 205,68%'
@@ -15,7 +15,7 @@ async function accessSpreadsheet() {
     //     offset: 1
     // })
 
-    const row = sunoToObject(linha)
+//    const row = sunoToObject(linha)
 
     await promisify(sheet.addRow)(row)
 }
