@@ -1,23 +1,24 @@
-const {getReportData} = require('./fileDataExtract')
-const  sunoToObject  = require('../utils/converters')
+const { getReportData } = require('./fileDataExtract')
+const { writeOnSpreadsheet } = require('./spreadsheet')
+const suno = require('./sunoResearch')
 
 
 
 async function start() {
-    let reportPDF = {}
-    reportPDF.path = "../assets/relatorios_in/suno-small-caps-9.pdf"
-    reportPDF.type = "sunoResearch"
-    reportPDF.variation = "smallCaps"
+    let reportPDF = suno.getPdfData()
+    let spreadSheetId = '1I5B8xSOXTMNRz0fsfuUAZyAMwkRdeo9FGjn4pAELuR' // id da planilha do google
     
     try{
-
         let data = await getReportData(reportPDF)
-        console.log(data)
+        data.forEach(async (row, index) => {
+            let object = suno.sunoRowSheet(row)
+            await writeOnSpreadsheet(spreadSheetId, object)
+        })
+        // let dataReturn = await writeOnSpreadsheet(spreadSheetId, data)
+        // console.log(dataReturn)
     }catch(error){
         console.log(error)
     }
-
-
 }
 
 start()
