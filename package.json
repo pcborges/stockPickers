@@ -1,0 +1,13 @@
+{
+  "name": "RoboInvestimentos",
+  "version": "1.0.0",
+  "description": "Crawler que extrai dados de relatórios de investimentos",
+  "main": "/src/index.js",
+  "repository": "https://github.com/pcborges/roboInvestimentos.git",
+  "author": "Patrick Borges",
+  "license": "MIT",
+  "dependencies": {
+    "google-spreadsheet": "^2.0.8",
+    "pdf-parse": "^1.1.1"
+  }
+}
