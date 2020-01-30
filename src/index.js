@@ -6,7 +6,7 @@ const suno = require('./sunoResearch')
 
 async function start() {
     let reportPDF = suno.getPdfData()
-    let spreadSheetId = '1I5B8xSOXTMNRz0fsfuUAZyAMwkRdeo9FGjn4pAELuR' // id da planilha do google
+    let spreadSheetId = '1I5B8xSOXTMNRz0fsfuUAZyAMwkRdeo9FGjn4pAELuRw' // id da planilha do google
     
     try{
         let data = await getReportData(reportPDF)

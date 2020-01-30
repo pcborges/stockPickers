@@ -7,7 +7,7 @@ async function writeOnSpreadsheet(spreadSheetId, object) {
         const doc = new GoogleSpreadsheet(spreadSheetId)
         try{
 
-            await promisify(doc.useServiceAccountAuth)(creds)
+            await promisify(doc.useServiceAccountAuth)(creds.sheets)
             const info = await promisify(doc.getInfo)()
             const sheet = info.worksheets[0]
             // const rows = await promisify(sheet.getRows)({

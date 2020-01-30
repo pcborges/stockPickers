@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "google-spreadsheet": "^2.0.8",
+    "googleapis": "39",
     "pdf-parse": "^1.1.1"
   }
 }
